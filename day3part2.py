@@ -15,5 +15,5 @@ def total_joltage(filepath):
     return counter
 
 if __name__ == "__main__":
-    filepath ='inputs/day3.txt'
+    filepath = 'inputs/day3.txt'
     print(total_joltage(filepath))
