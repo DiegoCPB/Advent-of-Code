@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on 2025-12-03 23:42:35 UTC+01:00
+
+@author: DiegoCPB
+"""
+
 def check_ID(filepath):
     counter = 0
     with open(filepath,'r') as file:

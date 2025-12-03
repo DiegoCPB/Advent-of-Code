@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on 2025-12-03 23:42:15 UTC+01:00
+
+@author: DiegoCPB
+"""
+
 def total_joltage(filepath):
     n = 2
     counter = 0

@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on 2025-12-03 23:42:53 UTC+01:00
+
+@author: DiegoCPB
+"""
+
 def get_password(filepath):
     pos = 50
     counter = 0
