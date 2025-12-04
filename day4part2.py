@@ -13,7 +13,7 @@ def count_rolls(filepath):
     with open(filepath,'r') as file:
         M = np.array([list(line.rstrip()) for line in file if line.rstrip()])
     M = (M=='@').astype(int)
-    R = np.zeros(M.shape).astype(int)
+    R = np.zeros(M.shape,dtype=int)
     while True:
         conv = signal.convolve2d(M,k,mode='same')
         Ri = (conv<4)*M
