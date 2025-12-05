@@ -17,8 +17,8 @@ def fresh_ingredients(filepath):
                 rng = [int(i) for i in line.split('-')]
                 rngs.append(rng)
                 vals += rng
-    vals = sorted(list(set(vals)))
-    func = lambda x: any([(x>=rng[0])*(x<=rng[1]) for rng in rngs])
+    vals = sorted(set(vals))
+    func = lambda x: any(r0 <= x <= r1 for r0, r1 in rngs)
     counter = 0
     for i in range(len(vals)-1):
         inter_val = (vals[i+1]+vals[i])//2
