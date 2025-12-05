@@ -21,9 +21,9 @@ def fresh_ingredients(filepath):
     func = lambda x: any([(x>=rng[0])*(x<=rng[1]) for rng in rngs])
     counter = 0
     for i in range(len(vals)-1):
-        mean = 0.5*(vals[i+1]+vals[i])
+        inter_val = (vals[i+1]+vals[i])//2
         n_between = vals[i+1]-vals[i]-1
-        counter += func(mean)*n_between
+        counter += func(inter_val)*n_between
     return counter+len(vals)
 
 if __name__ == "__main__":
