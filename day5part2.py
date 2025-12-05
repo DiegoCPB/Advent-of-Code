@@ -23,8 +23,8 @@ def fresh_ingredients(filepath):
     for i in range(len(vals)-1):
         mean = 0.5*(vals[i]+vals[i+1])
         n_between = vals[i+1]-vals[i]-1
-        counter += func(mean)*n_between+2
-    return counter-(len(vals)-2)
+        counter += func(mean)*n_between
+    return counter+len(vals)
 
 if __name__ == "__main__":
     filepath = 'inputs/day5.txt'
