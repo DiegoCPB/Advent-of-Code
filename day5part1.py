@@ -25,5 +25,5 @@ def fresh_ingredients(filepath):
     return counter
 
 if __name__ == "__main__":
-    filepath = 'inputs/day5.txt'
+    filepath = 'tests/day5.txt'
     print(fresh_ingredients(filepath))
