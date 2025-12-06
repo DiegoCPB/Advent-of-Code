@@ -6,11 +6,10 @@ Created on 2025-12-06 10:32:46 UTC+01:00
 """
 
 def math_homework(filepath):
-    lines = []
     with open(filepath) as file:
-        lines = [list(line.strip('\n')) for line in file]
-    oper = ''.join(lines[-1]).split()
-    table = [''.join(t).strip() for t in list(zip(*lines[:-1]))] # zip(*lines) => transposes lines
+        table = [list(line.strip('\n')) for line in file]
+    oper = ''.join(table[-1]).split()
+    table = [''.join(t).strip() for t in zip(*table[:-1])] # zip(*table) => transposes table
     table = [s.split('|') for s in '|'.join(table).split('||')]
     res = 0
     for i in range(len(table)):

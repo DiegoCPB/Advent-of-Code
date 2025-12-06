@@ -7,13 +7,13 @@ Created on 2025-12-06 10:32:46 UTC+01:00
 
 def math_homework(filepath):
     with open(filepath) as file:
-        table = [line.rstrip().split() for line in file]
+        table = [line.strip('\n').split() for line in file]
     oper = table[-1]
-    res = table[0]
-    for i in range(1,len(table)-1):
-        for j in range(len(oper)):
-            res[j] = eval(f'{res[j]}{oper[j]}{table[i][j]}')
-    return sum(res)
+    table = list(zip(*table[:-1])) # zip(*table) => transposes table
+    res = 0
+    for i in range(len(table)):
+        res += eval(oper[i].join(table[i]))
+    return res
 
 if __name__ == "__main__":
     filepath = 'inputs/day6.txt'
