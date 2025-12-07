@@ -7,7 +7,7 @@ Created on 2025-12-06 10:32:46 UTC+01:00
 
 def math_homework(filepath):
     with open(filepath) as file:
-        table = [list(line.strip('\n')) for line in file]
+        table = [list(line.strip('\n'))[::-1] for line in file] # From right to left
     oper = ''.join(table[-1]).split()
     table = [''.join(t).strip() for t in zip(*table[:-1])] # zip(*table) => transposes table
     table = [s.split('|') for s in '|'.join(table).split('||')]
