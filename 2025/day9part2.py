@@ -40,13 +40,11 @@ def rectangles(filepath):
             (i0, j0), (i1, j1) = C[k], C[l]
             iMin, iMax = sorted((i0, i1))
             jMin, jMax = sorted((j0, j1))
-            print((k,l),'          ',end='\r')
             if isRectangleInside(M,iMin,iMax,jMin,jMax):
                 itA = (abs(i0-i1)+1)*(abs(j0-j1)+1)
                 if itA > maxA:
                     maxA = itA
                     print(C[k],C[l],'->',itA)
-    print('          ',end='\r')
     return maxA  
 
 if __name__ == "__main__":
