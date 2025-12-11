@@ -33,7 +33,7 @@ def rectangles(filepath):
         iMin, iMax = sorted((i0, i1))
         jMin, jMax = sorted((j0, j1))
         M[iMin:iMax+1,jMin:jMax+1] = 1
-    M = M.tocsr() # optimization
+    M = M.tocsc() # optimization
     maxA = 0
     for k in range(nC):
         for l in range(k+1,nC):
