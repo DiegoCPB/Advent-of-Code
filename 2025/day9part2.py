@@ -38,11 +38,11 @@ def rectangles(filepath):
     for k in range(nC):
         for l in range(k+1,nC):
             (i0, j0), (i1, j1) = C[k], C[l]
-            iMin, iMax = sorted((i0, i1))
-            jMin, jMax = sorted((j0, j1))
-            if isRectangleInside(M,iMin,iMax,jMin,jMax):
-                itA = (abs(i0-i1)+1)*(abs(j0-j1)+1)
-                if itA > maxA:
+            itA = (abs(i0-i1)+1)*(abs(j0-j1)+1)
+            if itA > maxA:
+                iMin, iMax = sorted((i0, i1))
+                jMin, jMax = sorted((j0, j1))
+                if isRectangleInside(M,iMin,iMax,jMin,jMax):
                     maxA = itA
                     print(C[k],C[l],'->',itA)
     return maxA  
