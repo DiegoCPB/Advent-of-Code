@@ -8,7 +8,7 @@ Created on 2025-12-12 20:39:46 UTC+01:00
 def count_paths(links,node,end):
     if node == end:
         return 1
-    return sum(count_paths(links,n,end) for n in links[node])
+    return sum(count_paths(links,n,end) for n in links.get(node,[]))
 
 def you2out(filepath):
     links = {}
