@@ -26,9 +26,7 @@ def fitting_presents(filepath):
     possible = 0
     undetermined = 0
     for size, quants in regions:
-        if min(size) < 3:
-            impossible += 1
-        elif np.prod(size) < np.inner(quants,psizes):
+        if min(size) < 3 or np.prod(size) < np.inner(quants,psizes):
             impossible += 1
         elif np.prod(size//3) >= np.sum(quants):
             possible += 1
